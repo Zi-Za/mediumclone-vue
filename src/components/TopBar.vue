@@ -1,14 +1,14 @@
 <template>
   <nav class="navbar navbar-light">
     <div class="container">
-      <RouterLink class="navbar-brand" :to="{path: 'home'}">
+      <RouterLink class="navbar-brand" :to="{path: 'globalFeed'}">
         MediumClone
       </RouterLink>
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
           <RouterLink
             class="nav-link" 
-            :to="{path: 'home'}" 
+            :to="{path: 'globalFeed'}" 
             exact
             active-class="active"
           >
