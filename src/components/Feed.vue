@@ -45,7 +45,12 @@
             TAG LIST
           </RouterLink>
         </div>
-        PAGINATION
+        <mcv-pagination 
+          :total="total" 
+          :limit="limit" 
+          :current-page="currentPage"
+          :url="url"
+        />
       </div>
     </div>
   </div>
@@ -53,7 +58,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import { actionTypes } from '@/store/modules/feed';
+import { actionTypes } from '@/store/modules/feed'
+import McvPagination from '@/components/Pagination'
 
 export default {
   name: 'McvFeed',
@@ -63,13 +69,24 @@ export default {
       required: true
     }
   },
-computed: {
-  ...mapState({
-    isLoading: state => state.feed.isLoading,
-    feed: state => state.feed.data,
-    error: state => state.feed.error
-  })
-},
+  components: {
+    McvPagination
+  },
+  data() {
+    return {
+      total:500,
+      limit: 10,
+      currentPage: 5,
+      url: '/'
+    }
+  },
+  computed: {
+    ...mapState({
+      isLoading: state => state.feed.isLoading,
+      feed: state => state.feed.data,
+      error: state => state.feed.error
+    })
+  },
   mounted() {
     console.log('init feed')
     this.$store.dispatch(actionTypes.getFeed, {apiUrl: this.apiUrl})
