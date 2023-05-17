@@ -6,24 +6,59 @@ import Article from '@/views/Article'
 
 const routes = [
   {
-    path: '/',
-    name: 'globalFeed',
-    component: GlobalFeed,
-  },
-  {
     path: '/register',
     name: 'register',
-    component: Register,
+    component: Register
   },
   {
     path: '/login',
     name: 'login',
-    component: Login,
+    component: Login
+  },
+  {
+    path: '/',
+    name: 'globalFeed',
+    component: GlobalFeed
+  },
+  {
+    path: '/feed',
+    name: 'yourFeed',
+    component: GlobalFeed
+  },
+  {
+    path: '/tags/:slug',
+    name: 'tag',
+    component: GlobalFeed
+  },
+  {
+    path: '/articles/new',
+    name: 'createArticle',
+    component: GlobalFeed
   },
   {
     path: '/articles/:slug',
     name: 'article',
-    component: Article,
+    component: Article
+  },
+  {
+    path: '/articles/:slug/edit',
+    name: 'editArticle',
+    component: GlobalFeed
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: GlobalFeed
+  },
+  {
+    path: '/profiles/:slug',
+    name: 'userProfile',
+    component: GlobalFeed
+  },
+  {
+    path: '/profiles/:slug/favorites',
+    name: 'userProfileFavorites',
+    component: GlobalFeed
   }
 ]
 
