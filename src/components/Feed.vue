@@ -8,7 +8,7 @@
         <div class="article-meta">
           <RouterLink
             :to="{
-              path: 'userProfile', 
+              name: 'userProfile', 
               params: {slug: article.author.username}
             }" 
           >
@@ -17,7 +17,7 @@
           <div class="info">
           <RouterLink
             :to="{
-              path: 'userProfile', 
+              name: 'userProfile', 
               params: {slug: article.author.username}
             }" 
             class="author"
@@ -33,7 +33,7 @@
           </div>
           <RouterLink
             :to="{
-              path: 'article', 
+              name: 'article', 
               params: {slug: article.slug}
             }" 
             class="preview-link"

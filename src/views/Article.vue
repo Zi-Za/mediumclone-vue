@@ -5,13 +5,13 @@
         <h1>{{ article.title }}</h1>
         <div class="article-meta">
           <RouterLink 
-            :to="{path: 'userProfile', params: {slug: article.author.username}}"
+            :to="{name: 'userProfile', params: {slug: article.author.username}}"
           >
             <img :src="article.author.image" />
           </RouterLink>
           <div class="info">
             <RouterLink 
-              :to="{path: 'userProfile', params: {slug: article.author.username}}"
+              :to="{name: 'userProfile', params: {slug: article.author.username}}"
             >
               {{ article.author.username }}
             </RouterLink>
@@ -21,7 +21,7 @@
           </div>
           <span>
             <RouterLink class="btn btn-outline-secondary btn-sm"
-              :to="{path: 'editArticle', params: {slug: article.slug}}"
+              :to="{name: 'editArticle', params: {slug: article.slug}}"
             >
               <i class="ion-edit"></i>
               Edit Article
@@ -31,6 +31,18 @@
               Delete Article
             </button>
           </span>
+        </div>
+      </div>
+    </div>
+    <div class="container page">
+      <mcv-loading v-if="isLoading" />
+      <mcv-error-message v-if="error" :message="error"/>
+      <div class="row article-content" v-if="article">
+        <div class="col-xs-12">
+          <div>
+            <p>{{ article.body }}</p>
+          </div>
+          TAGLIST
         </div>
       </div>
     </div>

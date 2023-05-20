@@ -10,7 +10,7 @@
           v-for="popularTag in popularTags"
           :key="popularTag"
           :to="{
-            path: 'tag', 
+            name: 'tag', 
             params: {slug: popularTag}
           }" 
           class="tag-default tag-pill"

@@ -5,7 +5,7 @@
         <div class="col-md-6 offset-md-3 col-xs-12">
           <h1 class="text-xs-center">Sign Up</h1>
           <p class="text-xs-center">
-            <RouterLink :to="{path: 'login'}">Have an account?</RouterLink>
+            <RouterLink :to="{name: 'login'}">Have an account?</RouterLink>
           </p>
           <mcv-validation-errors 
             v-if='validationErrors' 
@@ -54,7 +54,7 @@
 <script>
 import { mapState } from 'vuex'
 
-import McvValidationErrors from '@/components/ValidationErrors.vue'
+import McvValidationErrors from '@/components/ValidationErrors'
 import {actionTypes} from '@/store/modules/auth'
 
 export default {

@@ -1,14 +1,14 @@
 <template>
   <nav class="navbar navbar-light">
     <div class="container">
-      <RouterLink class="navbar-brand" :to="{path: 'globalFeed'}">
+      <RouterLink class="navbar-brand" :to="{name: 'globalFeed'}">
         MediumClone
       </RouterLink>
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
           <RouterLink
             class="nav-link" 
-            :to="{path: 'globalFeed'}" 
+            :to="{name: 'globalFeed'}" 
             exact
             active-class="active"
           >
@@ -19,7 +19,7 @@
           <li class="nav-item">
             <RouterLink 
               class="nav-link" 
-              :to="{path: 'createArticle'}" 
+              :to="{name: 'createArticle'}" 
               active-class="active"
             >
               <i class="ion-compose"></i> &nbsp; New Article
@@ -29,7 +29,7 @@
           <li class="nav-item">
             <RouterLink 
               class="nav-link" 
-              :to="{path: 'settings'}" 
+              :to="{name: 'settings'}" 
               active-class="active"
             >
               <i class="ion-gear-a"></i> &nbsp; Settings
@@ -39,7 +39,7 @@
           <li class="nav-item">
             <RouterLink 
               class="nav-link" 
-              :to="{path: 'userProfile', params: {slug: currentUser.username}}"
+              :to="{name: 'userProfile', params: {slug: currentUser.username}}"
             >
               <img class="user-pic" :src="currentUser.image" />
               &nbsp;
@@ -51,7 +51,7 @@
           <li class="nav-item">
             <RouterLink 
               class="nav-link" 
-              :to="{path: 'login'}"
+              :to="{name: 'login'}"
               active-class="active"
             >
               Sign in
@@ -61,7 +61,7 @@
           <li class="nav-item">
             <RouterLink 
               class="nav-link" 
-              :to="{path: 'register'}" 
+              :to="{name: 'register'}" 
               active-class="active"
             >
               Sign up
