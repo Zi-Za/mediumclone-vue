@@ -3,47 +3,47 @@
     <div class="container page">
       <div class="row">
         <div class="col-md-10 offset-md-1 col-xs-12">
-          <mcv-validation-errors v-if="errors"/>
+          <mcv-validation-errors v-if="errors" :validation-errors="errors" />
           <form @submit.prevent="onSubmit">
             <fieldset>
               <fieldset class="form-group">
-                <input 
-                  type="text" 
-                  class="form-control form-control-lg" 
-                  placeholder="Article title" 
-                  v-model="title" 
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Article title"
+                  v-model="title"
                 />
               </fieldset>
 
               <fieldset class="form-group">
-                <input 
-                  type="text" 
-                  class="form-control form-control-lg" 
-                  placeholder="Description" 
-                  v-model="description" 
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Description"
+                  v-model="description"
                 />
               </fieldset>
 
               <fieldset class="form-group">
                 <textarea
-                  class="form-control form-control-lg" 
-                  placeholder="What is this article about?" 
-                  v-model="body" 
+                  class="form-control form-control-lg"
+                  placeholder="What is this article about?"
+                  v-model="body"
                 ></textarea>
               </fieldset>
 
               <fieldset class="form-group">
-                <input 
-                  type="text" 
-                  class="form-control form-control-lg" 
-                  placeholder="Enter tags" 
-                  v-model="tagList" 
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Enter tags"
+                  v-model="tagList"
                 />
               </fieldset>
               <fieldset class="form-group">
-                <button 
-                  type="submit" 
-                  class="btn btn-lg pull-xs-right btn-primary" 
+                <button
+                  type="submit"
+                  class="btn btn-lg pull-xs-right btn-primary"
                   :disable="isSubmitting"
                 >
                   Publish Article
@@ -62,28 +62,28 @@ import McvValidationErrors from '@/components/ValidationErrors'
 export default {
   name: 'McvArticleForm',
   components: {
-    McvValidationErrors
+    McvValidationErrors,
   },
   props: {
     initialValues: {
       type: Object,
-      required: true
+      required: true,
     },
     errors: {
       type: Object,
-      required: false
+      required: false,
     },
     isSubmitting: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       title: '',
       description: '',
       body: '',
-      tagList: ''
+      tagList: '',
     }
   },
   methods: {
@@ -92,10 +92,10 @@ export default {
         title: this.title,
         description: this.description,
         body: this.body,
-        tagList: this.tagList
+        tagList: this.tagList.split(' '),
       }
       this.$emit('articleSubmit', form)
-    }
-  }
+    },
+  },
 }
 </script>
