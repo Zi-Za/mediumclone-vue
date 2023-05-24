@@ -8,6 +8,7 @@ import Article from '@/views/Article'
 import CreateArticle from '@/views/CreateArticle'
 import EditArticle from '@/views/EditArticle'
 import Settings from '@/views/Settings'
+import Foo from '@/views/Foo'
 
 const routes = [
   {
@@ -65,6 +66,11 @@ const routes = [
     name: 'userProfileFavorites',
     component: Login,
   },
+  {
+    path: '/foo',
+    name: 'foo',
+    component: Foo
+  }
 ]
 
 const router = createRouter({
