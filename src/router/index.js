@@ -9,6 +9,7 @@ import CreateArticle from '@/views/CreateArticle'
 import EditArticle from '@/views/EditArticle'
 import Settings from '@/views/Settings'
 import Foo from '@/views/Foo'
+import UserProfile from '@/views/UserProfile'
 
 const routes = [
   {
@@ -59,18 +60,18 @@ const routes = [
   {
     path: '/profiles/:slug',
     name: 'userProfile',
-    component: Login,
+    component: UserProfile,
   },
   {
     path: '/profiles/:slug/favorites',
     name: 'userProfileFavorites',
-    component: Login,
+    component: UserProfile,
   },
   {
     path: '/foo',
     name: 'foo',
-    component: Foo
-  }
+    component: Foo,
+  },
 ]
 
 const router = createRouter({

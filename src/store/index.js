@@ -9,6 +9,7 @@ import settings from '@/store/modules/settings'
 import foo from '@/store/modules/foo'
 import bar from '@/store/modules/bar'
 import addToFavorites from '@/store/modules/addToFavorites'
+import userProfile from '@/store/modules/userProfile'
 
 export default createStore({
   state: {},
@@ -25,5 +26,6 @@ export default createStore({
     foo,
     bar,
     addToFavorites,
+    userProfile,
   },
 })

@@ -88,7 +88,7 @@ export default {
     McvLoading,
     McvErrorMessage,
     McvTagList,
-    McvAddToFavorites
+    McvAddToFavorites,
   },
   data() {
     return {
@@ -115,6 +115,9 @@ export default {
   watch: {
     currentPage() {
       console.log('currentPage changed')
+      this.fetchFeed()
+    },
+    apiUrl() {
       this.fetchFeed()
     },
   },
